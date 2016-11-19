@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"name": "Lucifers's Awakening",
+			"type": "Birthday Party",
+			"host": "Lucipurr",
+			"start_date": "2016-12-12",
+			"start_time": "00:00",
+			"end_date": "2016-12-12",
+			"end_time": "23:59",
+			"location": "Underworld",
+			"message": "Stay Away",
+			"guests": ["Me", "Myself", "Satan"]
+		},
+		{
+			"name": "Booo",
+			"type": "Conference",
+			"host": "IDK",
+			"start_date": "2016-12-13",
+			"start_time": "09:00",
+			"end_date": "2016-12-13",
+			"end_time": "19:00",
+			"location": "Hell",
+			"guests": ["Meh", "Meth", "Meowth"]
+		}
+	]
+}

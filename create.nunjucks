@@ -1,0 +1,135 @@
+{% extends "default.nunjucks" %}
+{% block page_title %}Create an Event{% endblock %}
+{% block content %}
+<header class="page-header">
+	<h2 class="page-title">
+		<span class="bigger">Create an Event</span><br>
+		<span class="smaller">Fill in the form below to start planning your next event!</span>
+	</h2>
+</header>
+<form>
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">General Information</h3></legend>
+	</header>
+	<div class="fieldset"><!-- The fieldset element doens't work with flexbox :( -->
+		<div class="input-group">
+			<label for="name">
+				<span>What's the <em>name</em> of the event? *</span>
+				<input type="text" id="name" placeholder="My Super Duper Awesome Party" required autofocus autocomplete="name" name="name">
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+		<div class="input-group">
+			<label for="type">
+				<span>What <em>type</em> of event is it? *</span>
+				<input type="text" id="type" placeholder="e.g. Birthday Party" list="type_list" required>
+				<ul class="input-requirements"></ul>
+				<datalist id="type_list">
+					<option value="Birthday Party">
+					<option value="Conference Talk">
+					<option value="Wedding">
+				</datalist>
+			</label>
+		</div>
+		<div class="input-group">
+			<label for="host">
+				<span>Who's the <em>host</em>? *</span>
+				<input type="text" id="host" required list="host_list">
+				<ul class="input-requirements"></ul>
+				<small>This can be a person or an organization</small>
+				<!-- This datalist will be pre-populated with the user's name, their company (if given), and other hosts they have given from previous events -->
+				<datalist id="host_list">
+					<option value="Ire Aderinokun">
+					<option value="Udacity">
+				</datalist>
+			</label>
+		</div>
+	</div>
+</fieldset>
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">When &amp; Where?</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group">
+			<label for="start">
+				<span>When's the event <em>starting</em>? *</span>
+				<input type="datetime-local" id="start" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+
+		<div class="input-group">
+			<label for="end">
+				<span>When's the event <em>ending</em>? *</span>
+				<input type="datetime-local" id="end" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+		<div class="input-group">
+			<label for="location">
+				<span><em>Where's</em> the event happening? *</span>
+				<input type="text" id="location" onFocus="geolocate()" placeholder="Start typing to search for a location" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+	</div>
+</fieldset>
+
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">The Guest List</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group input-group--full">
+			<label for="guests">
+				<span><em>Who</em> are the lucky invitees? *</span>
+				<textarea id="guests" cols="30" rows="3" placeholder="Me, Myself, I" required></textarea>
+				<ul class="input-requirements"></ul>
+				<small>Separate each invitee by a comma</small>
+			</label>
+		</div>
+
+	</div>
+</fieldset>
+
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">Finishing Touches</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group input-group--full">
+			<label for="message">
+				<span>Leave a note for the guests?</span>
+				<textarea id="message" cols="30" rows="3" placeholder="e.g. Get ready to turn up!"></textarea>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+	</div>
+
+	<button type="submit" class="submit">Create my Event!</button>
+
+</fieldset>
+
+<div class="progress-container">
+	<div class="progress-bar"></div>
+</div>
+
+</form>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/create.js"></script>
+{% endblock %}

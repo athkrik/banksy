@@ -1,0 +1,183 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Create an Event | Meet-Up Event Planner</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrapper">
+                <a href="index.html" class="nav-open">
+                    <span class="sr-only">Open Navigation</span>
+                    <i class="fa fa-bars"></i>
+                </a>
+                <h1 class="site-title"><a href="index.html">Meet-Up Event Planner</a></h1>
+
+                <nav class="site-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="nav-close">
+                                <span class="sr-only">Close Navigation</span>
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </li>
+                        <li><a href="index.html">Register</a></li>
+                        <li><a href="create.html">Create an Event</a></li>
+                        <li><a href="events.html">My Events</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <div class="wrapper">
+
+<header class="page-header">
+	<h2 class="page-title">
+		<span class="bigger">Create an Event</span><br>
+		<span class="smaller">Fill in the form below to start planning your next event!</span>
+	</h2>
+</header>
+
+<form>
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">General Information</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group">
+			<label for="name">
+				<span>What's the <em>name</em> of the event? *</span>
+				<input type="text" id="name" placeholder="My Super Duper Awesome Party" required autofocus autocomplete="name" name="name">
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+		<div class="input-group">
+			<label for="type">
+				<span>What <em>type</em> of event is it? *</span>
+				<input type="text" id="type" placeholder="e.g. Birthday Party" list="type_list" required>
+				<ul class="input-requirements"></ul>
+				<datalist id="type_list">
+					<option value="Birthday Party">
+					<option value="Conference Talk">
+					<option value="Wedding">
+				</datalist>
+			</label>
+		</div>
+
+		<div class="input-group">
+			<label for="host">
+				<span>Who's the <em>host</em>? *</span>
+				<input type="text" id="host" required list="host_list">
+				<ul class="input-requirements"></ul>
+				<small>This can be a person or an organization</small>
+
+
+				<datalist id="host_list">
+					<option value="Lucipurrr">
+					<option value="IDK">
+				</datalist>
+			</label>
+		</div>
+
+	</div>
+</fieldset>
+
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">When and Where in hell?</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group">
+			<label for="start">
+				<span>When be the event <em>starting</em>: *</span>
+				<input type="datetime-local" id="start" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+
+		<div class="input-group">
+			<label for="end">
+				<span>When be the event <em>ending</em>: *</span>
+				<input type="datetime-local" id="end" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+		<div class="input-group">
+			<label for="location">
+				<span><em>Where </em>be the event happening: *</span>
+				<input type="text" id="location" onFocus="geolocate()" placeholder="Start typing already" required>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+
+	</div>
+</fieldset>
+
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">The Guest List</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group input-group--full">
+			<label for="guests">
+				<span><em>Who</em> are comin: *</span>
+				<textarea id="guests" cols="30" rows="3" placeholder="Me, Myself, I" required></textarea>
+				<ul class="input-requirements"></ul>
+				<small>Separate each by a comma</small>
+			</label>
+		</div>
+
+	</div>
+</fieldset>
+
+
+<fieldset class="block">
+	<header class="block__header">
+		<legend><h3 class="block__title">Finishing Touches</h3></legend>
+	</header>
+
+	<div class="fieldset">
+		<div class="input-group input-group--full">
+			<label for="message">
+				<span>Leave a note for the guests</span>
+				<textarea id="message" cols="30" rows="3" placeholder="turn up!"></textarea>
+				<ul class="input-requirements"></ul>
+			</label>
+		</div>
+	</div>
+	<button type="submit" class="submit">Create my Event!</button>
+</fieldset>
+<div class="progress-container">
+	<div class="progress-bar"></div>
+</div>
+</form>
+            </div>
+        </main>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWbn2woYcKBa78EGto81shmbogj-9LfF0&amp;libraries=places&amp;callback=initAutocomplete" aync defer></script>
+
+        <script src="assets/js/main.js"></script>
+
+<script src="assets/js/moment.min.js"></script>
+<script src="assets/js/create.js"></script>
+
+
+    </body>
+</html>
